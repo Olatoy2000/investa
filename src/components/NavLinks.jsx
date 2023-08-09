@@ -1,7 +1,7 @@
-'use client'
+"use client";
 
 import { navData } from "@/constants";
-import React, { useState} from "react";
+import React, { useState } from "react";
 import Link from "next/link";
 import { AnimatePresence, motion } from "framer-motion";
 
@@ -31,7 +31,7 @@ const Navlinks = () => {
               />
             )}
           </AnimatePresence>
-          <span>{title}</span>
+          <span className="relative z-10">{title}</span>
         </Link>
       ))}
     </>
