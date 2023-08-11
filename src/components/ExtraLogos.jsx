@@ -7,6 +7,7 @@ import logoForbes from "@/images/logos/forbes.svg";
 import logoHuffpost from "@/images/logos/huffpost.svg";
 import logoTechcrunch from "@/images/logos/techcrunch.svg";
 import logoWired from "@/images/logos/Wired.svg";
+import Image from "next/image";
 
 const ExtraLogos = () => {
   const logos = [
@@ -52,10 +53,22 @@ const ExtraLogos = () => {
     },
   ];
   return (
-    <div className="relative -mt-">
-
+    <div className="relative -mt-4 lg:col-span-7 xl:col-span-6">
+      <p className="font-semibold text-center text-gray-900 tex-sm lg:text-left">
+        As featured in
+      </p>
+      <ul
+        role="list"
+        className="flex flex-wrap justify-center max-w-screen-xl mx-auto mt-8 gap-x-10 gap-y-8 lg:mx-0 lg:justify-start"
+      >
+        {logos.map(({ title, logo, _id }) => (
+          <li key={_id}>
+            <Image src={logo} alt={title} className="h-8 " unoptimized />
+          </li>
+        ))}
+      </ul>
     </div>
-  ) ;
+  );
 };
 
 export default ExtraLogos;
